@@ -1,0 +1,5 @@
+networkx
+matplotlib
+PySide6
+plotly>=6,<7
+scipy

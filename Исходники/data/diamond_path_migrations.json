@@ -1,0 +1,10 @@
+{
+  "diamond_v3_3_8_s4_p1_example.json": {
+    "target": "data/diamonds/diamond_v3_3_8_s4_p1_example.json",
+    "sha256": "5e8f0f2054e4f8e2a0e9ea6f32db8317a8e4b6dd4e0b593d9f05f5b883025efd"
+  },
+  "diamond_v3_8_12_p4.json": {
+    "target": "data/diamonds/diamond_v3_8_12_p4.json",
+    "sha256": "7bf2eef1370428b5d48750998e1324cb601bda40af75a1f2fe7af328b8d15f3b"
+  }
+}

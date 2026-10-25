@@ -1,0 +1,11 @@
+Иллюстрация создана встроенным инструментом imagegen 24 октября 2026 года для пустого результата в обеих вкладках.
+
+Use case: stylized-concept
+Asset type: compact empty-results illustration for the Russian scientific desktop app KvantAlmaz, shared by diamond-structure construction and herding-attack result panels.
+Primary request: create a refined restrained illustration meaning "no results yet, awaiting an experiment": a clean blank report sheet with a softly folded upper corner, a small magnifying glass resting in front at the lower right, and a subtle small converging graph of 4 pale circular nodes joining into 2 then 1 beside the sheet. The graph is a secondary cue to computational research.
+Style/medium: polished soft 3D editorial UI illustration, matte porcelain and translucent pale blue glass, minimal detail, gentle rounded geometry, crisp clean silhouette, professional scientific software.
+Composition/framing: one compact centered group in a square canvas, occupying about 80 percent of width and height, balanced and easily legible at 260 pixels, generous clear margins, slight three-quarter view.
+Lighting/mood: soft diffuse studio light, calm neutral waiting state, very subtle ambient contact shading only.
+Color palette: white and very pale icy blue body, muted blue-gray edges, restrained medium blue accents matching #3485FF, no dark heavy outlines.
+Scene/backdrop: truly transparent alpha background, isolated illustration.
+Constraints: blank sheet without writing, no letters, no numerals, no pseudo-text, no title, no watermark, no frame, no surrounding UI. No checkmarks, no success badge, no error symbol, no clocks, no gemstones, no atom, no people. Avoid large drop shadows or a ground plane.

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' file: qrc:; style-src 'unsafe-inline'; img-src data: blob:; font-src data: file:; connect-src 'none'">
+<style>
+@font-face{font-family:'__FONT_FAMILY__';src:url('__FONT_URL__') format('truetype')}
+html,body,#chart{width:100%;height:100%;margin:0;overflow:hidden;background:transparent}
+#chart,#legend{visibility:hidden}
+body{font-family:'__FONT_FAMILY__',sans-serif;touch-action:none}
+.scatterlayer .point{filter:drop-shadow(0px 2px 2px rgba(32,66,115,.24))}
+.scatterlayer .js-line{transition:stroke-width .16s ease,opacity .16s ease}
+#selection{display:none;position:absolute;pointer-events:none;width:23px;height:23px;box-sizing:border-box;border:3px solid;border-radius:50%;z-index:3;box-shadow:0 0 0 4px rgba(36,100,255,.14)}
+#legend{position:absolute;left:82px;top:22px;z-index:2;display:flex;flex-direction:column;gap:8px;padding:7px 10px;background:rgba(255,255,255,.88);font-size:12px;color:#263850}
+#legend button{font:inherit;color:inherit;display:flex;align-items:center;gap:8px;border:0;background:transparent;padding:0;cursor:pointer;text-align:left}
+#legend i{display:block;width:11px;height:11px;border-radius:2px;background:var(--color)}
+</style>
+<script src="__PLOTLY_URL__" charset="utf-8"></script>
+<script src="qrc:///qtwebchannel/qwebchannel.js"></script></head><body><div id="chart"></div>
+<div id="legend"><button data-method="classical" style="--color:#2464FF"><i></i>Классический</button><button data-method="grover_fixed" style="--color:#934EFF"><i></i>Фиксированный Гровер</button><button data-method="grover_bbht" style="--color:#00AB73"><i></i>BBHT</button></div><script>
+let bridge=null,revision=0,queue=Promise.resolve(),down=null;
+const el=document.getElementById('chart');
+const selection=document.createElement('div');selection.id='selection';document.body.appendChild(selection);
+window.scientificSelection=null;
+window.selectScientificPoint=function(target){window.scientificSelection=target;updateSelection();};
+function updateSelection(){
+ const target=window.scientificSelection,trace=target&&el.data?.[target.trace];
+ const p=trace&&el._fullLayout?position(trace,target.index):null;
+ selection.style.display=p?'block':'none';
+ if(p){selection.style.left=(p.x-11.5)+'px';selection.style.top=(p.y-11.5)+'px';selection.style.borderColor=trace.line?.color||trace.marker?.color||'#2464FF';}
+}
+window.highlightedMethod=null;
+new QWebChannel(qt.webChannelTransport,c=>{bridge=c.objects.bridge;});
+function position(trace,index){
+ const x=trace.x?.[index],y=trace.y?.[index];
+ if(x===null||x===undefined||y===null||y===undefined)return null;
+ const a=el._fullLayout.xaxis,b=el._fullLayout.yaxis;
+ const point={x:a._offset+a.d2p(x),y:b._offset+b.d2p(y)};
+ return Number.isFinite(point.x)&&Number.isFinite(point.y)?point:null;
+}
+function segmentDistance(p,a,b){
+ const dx=b.x-a.x,dy=b.y-a.y,length=dx*dx+dy*dy;
+ const t=length?Math.max(0,Math.min(1,((p.x-a.x)*dx+(p.y-a.y)*dy)/length)):0;
+ return Math.hypot(p.x-a.x-t*dx,p.y-a.y-t*dy);
+}
+function sendPoint(trace,index,p){
+ let boxStats=null;
+ el.data.forEach((t,i)=>{if(t.type==='box'&&t.legendgroup===trace.legendgroup&&Math.abs(t.x[0]-trace.x[index])<.1){const b=el.calcdata[i]?.[0];if(b)boxStats={q1:b.q1,median:b.med,q3:b.q3,lower:b.lf,upper:b.uf,min:b.min,max:b.max,count:t.y.length};}});
+ if(bridge)bridge.point(JSON.stringify({identity:trace.customdata?.[index]??null,method:trace.legendgroup,value:trace.y[index],axisValue:trace.x[index],traceName:trace.name,traceType:trace.type,boxStats:boxStats,index:index,x:p.x,y:p.y}));
+}
+window.highlightScientificMethod=function(method){
+ window.highlightedMethod=window.highlightedMethod===method?null:method;
+ const selected=window.highlightedMethod,spec=window.lastScientificSpec;
+ const indices=el.data.map((_,i)=>i);
+ const opacity=el.data.map(t=>!selected||t.legendgroup===selected?1:.28);
+ const widths=el.data.map((t,i)=>window._baseLineWidths[i]+(selected&&t.legendgroup===selected?2:0));
+ return Plotly.restyle(el,{opacity:opacity,'line.width':widths},indices);
+};
+document.querySelectorAll('#legend button').forEach(button=>button.addEventListener('click',()=>window.highlightScientificMethod(button.dataset.method)));
+window.setScientificPlot=function(spec){
+ const id=++revision;
+ queue=queue.then(async()=>{
+  if(id!==revision)return;
+  await document.fonts.ready;
+  spec.layout.autosize=false;spec.layout.width=document.body.clientWidth;spec.layout.height=document.body.clientHeight;
+  spec.layout.dragmode=false;spec.layout.showlegend=false;
+  spec.layout.xaxis.fixedrange=true;spec.layout.yaxis.fixedrange=true;
+  const types=[...new Set(spec.data.map(t=>t.type))].sort().join(',');
+  if(el._scientificTypes!==undefined&&el._scientificTypes!==types){Plotly.purge(el);el._scientificBound=false;}
+  el._scientificTypes=types;
+  await Plotly.react(el,spec.data,spec.layout,{responsive:true,displayModeBar:false,displaylogo:false,scrollZoom:false,doubleClick:false,showAxisDragHandles:false,showAxisRangeEntryBoxes:false,editable:false,locale:'ru'});
+  window.lastScientificSpec=spec;window.highlightedMethod=null;window._baseLineWidths=el.data.map(t=>t.line?.width??2.8);
+  if(!el._scientificBound){
+   el.on('plotly_afterplot',updateSelection);
+   el.on('plotly_legendclick',()=>false);el.on('plotly_legenddoubleclick',()=>false);
+   el.on('plotly_click',event=>{const point=event.points[0],trace=el.data[point.curveNumber],p={x:el._fullLayout.xaxis._offset+el._fullLayout.xaxis.d2p(point.x),y:el._fullLayout.yaxis._offset+el._fullLayout.yaxis.d2p(point.y)};if(trace.type==='bar')sendPoint(trace,point.pointNumber,p);if(trace.type==='box'){const b=el.calcdata[point.curveNumber][0];sendPoint({...trace,x:[trace.x[0]],y:[b.med]},0,p);}});
+   el._scientificBound=true;
+  }
+  updateSelection();
+  await Plotly.relayout(el,{width:document.body.clientWidth,height:document.body.clientHeight});
+  await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+  el.style.visibility='visible';document.getElementById('legend').style.visibility='visible';
+  if(bridge)bridge.ready();
+ }).catch(error=>{if(bridge)bridge.error(String(error.stack||error));});
+};
+el.addEventListener('wheel',event=>event.preventDefault(),{passive:false});
+el.addEventListener('dblclick',event=>{event.preventDefault();event.stopPropagation();},true);
+el.addEventListener('pointerdown',event=>{down={x:event.clientX,y:event.clientY};},true);
+document.addEventListener('pointerup',event=>{
+ if(!down||Math.hypot(event.clientX-down.x,event.clientY-down.y)>4||!el._fullLayout)return;
+ down=null;
+ const rect=el.getBoundingClientRect(),p={x:event.clientX-rect.left,y:event.clientY-rect.top};
+ let pointHit=null,lineHit=null,pointDistance=12,lineDistance=7;
+ el.data.forEach(trace=>{
+  if(trace.type!=='scatter')return;
+  let previous=null;
+  (trace.x??[]).forEach((_,index)=>{
+   const current=position(trace,index);
+   if(!current){previous=null;return;}
+   if((trace.mode??'').includes('markers')){
+    const distance=Math.hypot(current.x-p.x,current.y-p.y);
+    if(distance<pointDistance){pointDistance=distance;pointHit={trace,index};}
+   }
+   if(previous&&(trace.mode??'').includes('lines')){
+    const distance=segmentDistance(p,previous,current);
+    if(distance<lineDistance){lineDistance=distance;lineHit=trace.legendgroup;}
+   }
+   previous=current;
+  });
+ });
+ if(pointHit)sendPoint(pointHit.trace,pointHit.index,p);
+ else if(lineHit)window.highlightScientificMethod(lineHit);
+},true);
+new ResizeObserver(()=>{const width=document.body.clientWidth,height=document.body.clientHeight;if(el._fullLayout&&(el._fullLayout.width!==width||el._fullLayout.height!==height))Plotly.relayout(el,{width:width,height:height});}).observe(document.body);
+</script></body></html>

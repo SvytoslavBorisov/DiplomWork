@@ -1,0 +1,699 @@
+{
+  "full_runs": 297,
+  "entries_including_stages": 891,
+  "groups": [
+    {
+      "n": 12,
+      "k": 3,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 12,
+      "k": 3,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 12,
+      "k": 3,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 12,
+      "k": 4,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 12,
+      "k": 4,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 12,
+      "k": 4,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 12,
+      "k": 5,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 12,
+      "k": 5,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 12,
+      "k": 5,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 12,
+      "k": 6,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 12,
+      "k": 6,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 12,
+      "k": 6,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 3,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 3,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 3,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 4,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 4,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 4,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 5,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 5,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 5,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 6,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 6,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 6,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 7,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 7,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 7,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 8,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 8,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 8,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 9,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 9,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 9,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 10,
+      "method": "classical",
+      "runs": 3,
+      "available": 9
+    },
+    {
+      "n": 16,
+      "k": 10,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 16,
+      "k": 10,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 3,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 3,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 3,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 4,
+      "method": "classical",
+      "runs": 3,
+      "available": 60
+    },
+    {
+      "n": 20,
+      "k": 4,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 60
+    },
+    {
+      "n": 20,
+      "k": 4,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 60
+    },
+    {
+      "n": 20,
+      "k": 5,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 5,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 5,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 6,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 6,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 6,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 7,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 7,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 7,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 8,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 8,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 8,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 9,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 9,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 9,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 10,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 10,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 20,
+      "k": 10,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 3,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 3,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 3,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 4,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 4,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 4,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 5,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 5,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 5,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 6,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 6,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 6,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 7,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 7,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 7,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 8,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 8,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 8,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 9,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 9,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 9,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 10,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 10,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 24,
+      "k": 10,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 28,
+      "k": 3,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 28,
+      "k": 3,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 28,
+      "k": 3,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 28,
+      "k": 4,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 28,
+      "k": 4,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 28,
+      "k": 4,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 28,
+      "k": 5,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 28,
+      "k": 5,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 28,
+      "k": 5,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 28,
+      "k": 6,
+      "method": "classical",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 28,
+      "k": 6,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 28,
+      "k": 6,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 10
+    },
+    {
+      "n": 32,
+      "k": 3,
+      "method": "classical",
+      "runs": 3,
+      "available": 3
+    },
+    {
+      "n": 32,
+      "k": 3,
+      "method": "grover_bbht",
+      "runs": 3,
+      "available": 4
+    },
+    {
+      "n": 32,
+      "k": 3,
+      "method": "grover_fixed",
+      "runs": 3,
+      "available": 4
+    }
+  ]
+}

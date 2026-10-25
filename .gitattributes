@@ -1,0 +1,2 @@
+*.exe filter=lfs diff=lfs merge=lfs -text
+Исходники/experiments/reports/policy_v2_all.jsonl filter=lfs diff=lfs merge=lfs -text
