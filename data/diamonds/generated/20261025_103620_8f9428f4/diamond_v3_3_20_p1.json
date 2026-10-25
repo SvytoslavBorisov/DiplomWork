@@ -1,0 +1,173 @@
+{
+  "format_version": 3,
+  "model": "reduced-h-sigma-state-v3",
+  "trunc_bits": 20,
+  "sigma_bits": 0,
+  "sigma_projection": "low_bits",
+  "sigma_mode": "disabled",
+  "leaf_sigma": 0,
+  "sigma_schedule": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "depth": 3,
+  "rounds": 12,
+  "prefix_blocks": 1,
+  "link_N": 512,
+  "first_level_N": 1024,
+  "stats": {
+    "sigma_bits": 0,
+    "leaf_sigma": 0,
+    "sigma_level_1": 0,
+    "sigma_level_2": 0,
+    "sigma_level_3": 0,
+    "collision_queries": 23684,
+    "blackburn_transition_queries": 23684,
+    "blackburn_matching_attempts": 12,
+    "blackburn_graph_edges": 21,
+    "blackburn_level_1_L": 1178,
+    "blackburn_level_1_edges": 14,
+    "blackburn_level_2_L": 2037,
+    "blackburn_level_2_edges": 6,
+    "blackburn_level_3_L": 3056,
+    "blackburn_level_3_edges": 1,
+    "compression_calls": 23684,
+    "generated_candidates": 23684,
+    "oracle_queries": 0,
+    "grover_iterations": 0
+  },
+  "leaves": [
+    {
+      "block": "",
+      "state": "d0cec",
+      "sigma": 0
+    },
+    {
+      "block": "",
+      "state": "9186a",
+      "sigma": 0
+    },
+    {
+      "block": "",
+      "state": "320ee",
+      "sigma": 0
+    },
+    {
+      "block": "",
+      "state": "43ff2",
+      "sigma": 0
+    },
+    {
+      "block": "",
+      "state": "db3e8",
+      "sigma": 0
+    },
+    {
+      "block": "",
+      "state": "e3e10",
+      "sigma": 0
+    },
+    {
+      "block": "",
+      "state": "0a910",
+      "sigma": 0
+    },
+    {
+      "block": "",
+      "state": "5a0e5",
+      "sigma": 0
+    }
+  ],
+  "structure": [
+    [
+      {
+        "h_left": "d0cec",
+        "h_right": "43ff2",
+        "sigma_left": 0,
+        "sigma_right": 0,
+        "m_link_left": "81524f42a2406b8ac98f8b376db6f7bffe7bfb68e96c0b82a8f08fb9d35728a682e8be5476e4d6f533264bd187422f9c66a1f98df7b602b8b3a91aeaa763b9a8",
+        "m_link_right": "6091c799dda8f5b61d140660ecde7bf0d4815698ba73a95d01d14c028750f3672eb407b3ff6e49c6f64c36b7addf6e02cfa3e739811dac0283d47f12c30fbc0e",
+        "h_common": "7e8c3",
+        "sigma_common": 0
+      },
+      {
+        "h_left": "9186a",
+        "h_right": "0a910",
+        "sigma_left": 0,
+        "sigma_right": 0,
+        "m_link_left": "476fc34a6edcc63b7ffafba9d4061f4698c0d15a469ed006b3e9ee377e2936afb18e3c14101aed8fd759db48f400ead888e2f0885e92bb163e5e79f412314ab1",
+        "m_link_right": "766f0c36bdba74d8ba79e9d597eb9b20f52d25ac9bbb7261fad2196c2d0b7d364133ed23bcb69513b4b5794d581915efd85fba3bcdbd6b974ff4fde2af74ff72",
+        "h_common": "00052",
+        "sigma_common": 0
+      },
+      {
+        "h_left": "320ee",
+        "h_right": "e3e10",
+        "sigma_left": 0,
+        "sigma_right": 0,
+        "m_link_left": "9f6d443a490ea779c5be901316cb097e80e2c8ce48fc704e41bdfb23a4cdc9c3af4462efe4ed001d056dc1c9aa6313051f285b35a3a5d2cde9a95a723f3525a0",
+        "m_link_right": "c60b3689b838a6f2b6e59ffbc72da18d966b09dcf2a7cbcc4f8f564348db1416b41285c69b15f44dfd7c97f06b1011e52c2772acb5469e8264f0a87d0d45f366",
+        "h_common": "52178",
+        "sigma_common": 0
+      },
+      {
+        "h_left": "db3e8",
+        "h_right": "5a0e5",
+        "sigma_left": 0,
+        "sigma_right": 0,
+        "m_link_left": "41ca8eca53445234e85479d0561c738929424979e9c9a80935bd6b6723cd7c789b525403c4bc363180e6af4d55ad26e4643869a0bb124c77f09fe52bf88f5412",
+        "m_link_right": "29d3a285ee5300506669e3f875053d6732454ebd603e728991bb45a5f678bafeb4965af93477d90a0c60c010f46bf39d2e99375913d82263bc939417b9cbfc04",
+        "h_common": "ae3bd",
+        "sigma_common": 0
+      }
+    ],
+    [
+      {
+        "h_left": "7e8c3",
+        "h_right": "00052",
+        "sigma_left": 0,
+        "sigma_right": 0,
+        "m_link_left": "2889a44d0e74a863fae0bf7231640af33e36ba3c8e2d74c922fac98397b15ccb2e9a431f996c40b89ef50761c736dc1aed81f7845cc86883b440746a341aa4f6",
+        "m_link_right": "b6221af9fd13e4a523d970f7b803f446a0063e449b549e543292ca520f4ce756d805a6b13cd75789892c97b7ec3a58d8e70c5039fd457e7b1c19784db83186cf",
+        "h_common": "058b2",
+        "sigma_common": 0
+      },
+      {
+        "h_left": "52178",
+        "h_right": "ae3bd",
+        "sigma_left": 0,
+        "sigma_right": 0,
+        "m_link_left": "67f0afc8d3ac028e7527078112218a49c434b5913bd3fa5d0b5ff30b64daa666079923f5165718ea5ba913af4f83ac94869dacbaa6db12b6c0612c2993a8829d",
+        "m_link_right": "cf8a8c3d6cbba851910a881a24e6addcd301aa1a397ef546b6b85ad3f66b0d7d464775e5a5a5100a1aa54c310ee63694cb0329d988dbc982cf4ed826ab5c31cf",
+        "h_common": "1ac1f",
+        "sigma_common": 0
+      }
+    ],
+    [
+      {
+        "h_left": "058b2",
+        "h_right": "1ac1f",
+        "sigma_left": 0,
+        "sigma_right": 0,
+        "m_link_left": "18611f63ca13fb804b57cb2a4a5363252f8bd4adbce31a7073280391b6f0bfd27f1e040a7ba7fad84061ea5d534107e2904d92a477066a0b144f6f4dc731686c",
+        "m_link_right": "1510943ce9d6a8b949a145af46ecb5be76db073d5d3fe7603411d6f3deb4ea034bb6343e31cf24fa2092610e3d3de7d0add089afc9608744fd4ae66ebadad4e5",
+        "h_common": "c2877",
+        "sigma_common": 0
+      }
+    ]
+  ],
+  "theory": {
+    "naive_collision_bits": 20,
+    "sigma_aware_collision_bits": 20,
+    "naive_linking_exponent": 17,
+    "sigma_aware_linking_exponent": 17
+  },
+  "search_protocol": "fixed-single-bbht-auto-v1",
+  "attempt_policy": "classical",
+  "query_model": "classical-g-v1",
+  "statevector_simulation": false,
+  "seed": null,
+  "measurement_version": "grover-statevector-v2"
+}

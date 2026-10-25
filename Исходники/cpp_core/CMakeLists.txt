@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 project(gost_core LANGUAGES CXX)
+option(GOST_ENABLE_AVX2 "Включать AVX2 только для совместимых процессоров" OFF)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -60,17 +61,15 @@ if(GOST_BUILD_OPTIMIZATION_TESTS)
 endif()
 
 if(MSVC)
-  # Собирает быстрое ядро Release с AVX2 и межмодульной оптимизацией.
+  # Собирает совместимое ядро Release с межмодульной оптимизацией.
   target_compile_options(gost_core PRIVATE
     $<$<CONFIG:Release>:/O2>
     $<$<CONFIG:Release>:/GL>
-    $<$<CONFIG:Release>:/arch:AVX2>
     $<$<CONFIG:Release>:/EHsc>
   )
   target_compile_definitions(gost_core PRIVATE
     $<$<CONFIG:Release>:NDEBUG>
     $<$<CONFIG:Release>:_ITERATOR_DEBUG_LEVEL=0>
-    $<$<CONFIG:Release>:GOST_FORCE_AVX2=1>
   )
   target_link_options(gost_core PRIVATE
     $<$<CONFIG:Release>:/LTCG>
@@ -78,10 +77,17 @@ if(MSVC)
     $<$<CONFIG:Release>:/OPT:ICF>
   )
 else()
-  # Собирает проверочное ядро Linux с теми же пакетными операциями AVX2.
-  target_compile_options(gost_core PRIVATE -O3 -mavx2 -DNDEBUG -pthread)
-  target_compile_definitions(gost_core PRIVATE GOST_FORCE_AVX2=1)
+  # Собирает совместимое ядро Linux без обязательных инструкций AVX2.
+  target_compile_options(gost_core PRIVATE -O3 -DNDEBUG -pthread)
   target_link_libraries(gost_core PRIVATE pthread)
+endif()
+if(GOST_ENABLE_AVX2)
+  if(MSVC)
+    target_compile_options(gost_core PRIVATE /arch:AVX2)
+  else()
+    target_compile_options(gost_core PRIVATE -mavx2)
+  endif()
+  target_compile_definitions(gost_core PRIVATE GOST_FORCE_AVX2=1)
 endif()
 if(GOST_BUILD_OPTIMIZATION_TESTS)
   get_target_property(core_options gost_core COMPILE_OPTIONS)
